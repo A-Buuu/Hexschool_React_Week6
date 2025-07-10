@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ClipLoader } from "react-spinners";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const API_BASE = import.meta.env.VITE_BASE_URL;
 const API_PATH = import.meta.env.VITE_API_BATH;
@@ -101,7 +101,10 @@ export default function ProductDetailPage() {
                   />
                 )}
               </button>
-            </div>
+            </div>            
+            <Link to="/products" className="btn btn-secondary mt-5">
+              回到產品列表
+            </Link>
           </div>
         </div>
       )}
