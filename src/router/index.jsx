@@ -3,6 +3,7 @@ import FrontLayout from "../layouts/FrontLayout";
 import HomePage from "../pages/HomePage";
 import ProductsPage from "../pages/ProductsPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
+import CartPage from "../pages/CartPage";
 
 // 所有路由列表
 const router = createHashRouter([
@@ -24,7 +25,7 @@ const router = createHashRouter([
       },
       {
         path: "cart",
-        element: <h1>購物車</h1>,
+        element: <CartPage />,
       },
     ],
   },
