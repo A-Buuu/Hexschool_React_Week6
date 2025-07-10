@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ClipLoader } from "react-spinners";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const API_BASE = import.meta.env.VITE_BASE_URL;
 const API_PATH = import.meta.env.VITE_API_BATH;
@@ -13,6 +13,7 @@ export default function ProductDetailPage() {
   const [qtySelect, setQtySelect] = useState(1);
   const [isScreenLoading, setIsScreenLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   // 取得單一產品
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function ProductDetailPage() {
       } catch (error) {
         alert("取得產品失敗");
         // console.log(error.response.data.message);
+        navigate("/products");
       } finally {
         setIsScreenLoading(false);
       }
